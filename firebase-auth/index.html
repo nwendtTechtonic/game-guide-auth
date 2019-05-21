@@ -23,7 +23,7 @@
           <a href="#" class="grey-text" id="logout">Logout</a>
         </li>
         <li class="logged-in">
-          <a href="#" class="grey-text modal-trigger" data-target="modal-create">Rent Tool</a>
+          <a href="#" class="grey-text modal-trigger" data-target="modal-create">Rent a Tool</a>
         </li>
         <li class="logged-out">
           <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
@@ -120,9 +120,34 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAzS4WLI-t4ZN3F3pKXAxobyjg-aHL7K9g",
+      authDomain: "toolshed-auth.firebaseapp.com",
+      databaseURL: "https://toolshed-auth.firebaseio.com",
+      projectId: "toolshed-auth",
+      storageBucket: "toolshed-auth.appspot.com",
+      messagingSenderId: "76788404884",
+      appId: "1:76788404884:web:6795d1431347fd06"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // Update firestore settings
+    db.settings({ timestampsInSnapshots: true }) // may be optional in v.6 (was necessary in v.5)
+  </script>
+
   <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
-
 </body>
 
 </html>
