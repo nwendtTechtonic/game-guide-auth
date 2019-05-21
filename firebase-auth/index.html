@@ -141,9 +141,6 @@
     // Make auth and firestore references
     const auth = firebase.auth();
     const db = firebase.firestore();
-
-    // Update firestore settings
-    db.settings({ timestampsInSnapshots: true }) // may be optional in v.6 (was necessary in v.5)
   </script>
 
   <script src="scripts/auth.js"></script>
